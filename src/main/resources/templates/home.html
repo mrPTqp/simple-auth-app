@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<h1>Welcome! Please, login or registration.</h1>
+<div><a href="/login">Login</a></div>
+<div><a href="/registration">Registration</a></div>
+<div><p>.</p></div>
+<div><p>.</p></div>
+<div th:unless="${#authentication.getName().equals('anonymousUser')}">
+    <div>Hello, <span th:text="${#authentication.name}"></span></div>
+    <div><a th:href="@{/logout}">Logout</a></div>
+</div>
+
+</body>
+</html>
